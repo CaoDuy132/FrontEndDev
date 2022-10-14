@@ -39,6 +39,8 @@ Route::middleware('checkLogin')->group(function() {
     Route::get('/prodManager', [ProductsController::class, "index"]);
     Route::get('/afterlogin', [loginController::class, "afterlogin"]);
     Route::get('/logout', [loginController::class, "logout"]);
+    Route::get('/logout2', [loginController::class, "logout"]);
+
     // Route::get('/allProduct',[ProductsController::class,"index"]);
     // Route::get('/addProduct',[ProductsController::class,"addprod"]);
     // Route::get('/editProduct',[ProductsController::class,"editprod"]);
