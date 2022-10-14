@@ -42,5 +42,6 @@ Route::middleware('checkLogin')->group(function() {
     // Route::get('/allProduct',[ProductsController::class,"index"]);
     // Route::get('/addProduct',[ProductsController::class,"addprod"]);
     // Route::get('/editProduct',[ProductsController::class,"editprod"]);
+    //test commit
 });
 
