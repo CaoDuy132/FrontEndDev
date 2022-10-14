@@ -23,7 +23,6 @@ use App\Http\Controllers\GoogleController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [loginController::class, "index"]);
 Route::get('/login', [loginController::class, "index"]);
 Route::get('auth/google', [GoogleController::class, 'redirect'])->name('google-auth');
 Route::get('auth/google/call-back', [GoogleController::class, 'callbackGoogle']);
@@ -36,7 +35,12 @@ Route::middleware('checkLogin')->group(function() {
     Route::get('sizeManager', [SizeController::class, 'index']);
     Route::get('tagManager', [TagController::class, 'index']);
     Route::get('storagesManager', [StoragesCotroller::class, 'index']);
+    // Route::get('/brandManager',[ProductsController::class,"index"]);
     Route::get('/prodManager', [ProductsController::class, "index"]);
     Route::get('/afterlogin', [loginController::class, "afterlogin"]);
     Route::get('/logout', [loginController::class, "logout"]);
+    // Route::get('/allProduct',[ProductsController::class,"index"]);
+    // Route::get('/addProduct',[ProductsController::class,"addprod"]);
+    // Route::get('/editProduct',[ProductsController::class,"editprod"]);
 });
+
