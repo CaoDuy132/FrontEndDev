@@ -18,9 +18,10 @@ class GoogleController extends Controller
 
     public function callbackGoogle()
     {
+        
         try {
-            
-            $google_user = Socialite::driver('google')->user();
+          
+            $google_user = Socialite::driver('google')->stateless()->user();
             $google_id = $google_user->getId();
             $email = $google_user->getEmail();
             $image = $google_user->getAvatar();
@@ -31,6 +32,7 @@ class GoogleController extends Controller
                 'image'=>$image,
                 'name'=>$name,
             ]);
+            
             if($check==true){
                 Session::put('name',$name);
                 Session::put('image',$image);
